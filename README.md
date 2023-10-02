@@ -1,6 +1,9 @@
 # Asset Inventory Management System
 https://ecoharbor-server.onrender.com
 
+https://github.com/leilaotieno2/ecoharbor-client
+
+
 ## Project Overview
 
 In every organization, managing assets efficiently is crucial. Whether it's office equipment, machinery, or IT resources, keeping track of these assets can be challenging, especially in larger organizations with multiple departments and employees. The Asset Inventory Management System is designed to streamline this process, making it easier to track, maintain, and allocate assets.
