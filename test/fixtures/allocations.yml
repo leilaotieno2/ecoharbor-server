@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  allocation_id: 1
+  asset_id: 1
+  employee_id: 1
+  quantity_allocated: 1
+  allocation_date: 2023-10-05
+  return_date: 2023-10-05
+
+two:
+  allocation_id: 1
+  asset_id: 1
+  employee_id: 1
+  quantity_allocated: 1
+  allocation_date: 2023-10-05
+  return_date: 2023-10-05
