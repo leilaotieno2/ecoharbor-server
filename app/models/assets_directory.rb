@@ -1,0 +1,2 @@
+class AssetsDirectory < ApplicationRecord
+end
