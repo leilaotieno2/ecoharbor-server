@@ -1,2 +1,5 @@
 class Department < ApplicationRecord
-end
+    has_many :employees
+    has_many :assets_directories
+  end
+  
