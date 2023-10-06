@@ -1,2 +1,4 @@
 class Repair < ApplicationRecord
-end
+    belongs_to :assets_directory
+  end
+  
