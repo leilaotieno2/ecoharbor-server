@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  asset_id: 1
+  asset_name: MyString
+  category_name: MyString
+  category_code: MyString
+  condition: MyString
+  status: MyString
+  purchase_value: 9.99
+  current_value: 9.99
+  quantity_in_stock: 1
+  department_id: 1
+
+two:
+  asset_id: 1
+  asset_name: MyString
+  category_name: MyString
+  category_code: MyString
+  condition: MyString
+  status: MyString
+  purchase_value: 9.99
+  current_value: 9.99
+  quantity_in_stock: 1
+  department_id: 1

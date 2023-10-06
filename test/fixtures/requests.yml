@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  request_id: 1
+  asset_id: 1
+  urgency: MyText
+  quantity: 1
+  reason: MyText
+  employee_id: 1
+  request_date: 2023-10-05
+  approval_date: 2023-10-05
+  request_status: MyText
+
+two:
+  request_id: 1
+  asset_id: 1
+  urgency: MyText
+  quantity: 1
+  reason: MyText
+  employee_id: 1
+  request_date: 2023-10-05
+  approval_date: 2023-10-05
+  request_status: MyText
