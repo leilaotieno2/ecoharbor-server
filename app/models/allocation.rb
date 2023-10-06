@@ -1,2 +1,5 @@
 class Allocation < ApplicationRecord
-end
+    belongs_to :assets_directory
+    belongs_to :employee
+  end
+  
