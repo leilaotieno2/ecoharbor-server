@@ -1,0 +1,2 @@
+module RAssetsDirectorysHelper
+end
