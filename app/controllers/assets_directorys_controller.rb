@@ -2,28 +2,39 @@ class AssetsDirectorysController < ApplicationController
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
   rescue_from ActiveRecord::RecordNotFound, with: :render_asset_not_found
 
-  def index
+  def new
   end
 
   def create
+    asset = Asset.create!(asset_params)
+    render json: asset, status: :created
   end
 
   def index
+    render json: Asset.all, status: :ok
   end
 
   def show
+    asset = find_asset
+    render json: asset, status: :ok
   end
 
   def edit
   end
 
   def update
+    asset = find_asset
+    car.update!(asset_params)
+    render json: asset, status: :ok
   end
 
   def delete
   end
 
   def destroy
+    asset = find_asset
+    asset.destroy!
+    head :no_content
   end
 
   private 

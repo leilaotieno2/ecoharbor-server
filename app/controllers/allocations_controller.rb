@@ -6,24 +6,35 @@ class AllocationsController < ApplicationController
   end
 
   def create
+    allocation = Allocation.create!(allocation_params)
+    render json: allocation, status: :created
   end
 
   def index
+    render json: Allocation.all, status: :ok
   end
 
   def show
+    allocation = find_allocation
+    render json: allocation, status: :ok
   end
 
   def edit
   end
 
   def update
+    allocation = find_allocation
+    allocation.update!(allocation_params)
+    render json: allocation, status: :ok
   end
 
   def delete
   end
 
   def destroy
+    allocation = find_allocation
+    allocation.destroy!
+    head :no_content
   end
 
   private 
@@ -32,7 +43,7 @@ class AllocationsController < ApplicationController
     params.permit(:allocation_id, :asset_id, :employee_id, :quantity_allocated, :allocation_date, :return_date)
   end
 
-  def find_rallocation
+  def find_allocation
     allocation = Allocation.find(params[:id])
   end
 

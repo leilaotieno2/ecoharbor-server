@@ -6,24 +6,35 @@ class DepartmentsController < ApplicationController
   end
 
   def create
+    department = Department.create!(department_params)
+    render json: department, status: :created
   end
 
   def index
+    render json: Department.all, status: :ok
   end
 
   def show
+    department = find_department
+    render json: department, status: :ok
   end
 
   def edit
   end
 
   def update
+    department = find_department
+    department.update!(department_params)
+    render json: department, status: :ok
   end
 
   def delete
   end
 
   def destroy
+    department = find_department
+    department.destroy!
+    head :no_content
   end
 
   private 

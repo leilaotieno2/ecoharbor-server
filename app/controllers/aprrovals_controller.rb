@@ -6,29 +6,40 @@ class AprrovalsController < ApplicationController
   end
 
   def create
+    approval = Aprroval.create!(approval_params)
+    render json: approval, status: :created
   end
 
   def index
+    render json: Arrovals.all, status: :ok
   end
 
   def show
+    approval = find_approval
+    render json: approval, status: :ok
   end
 
   def edit
   end
 
   def update
+    approval = find_approval
+    approval.update!(approval_params)
+    render json: approval, status: :ok
   end
 
   def delete
   end
 
   def destroy
+    approval = find_approval
+    approval.destroy!
+    head :no_content
   end
 
   private 
 
-  def approvals_params
+  def approval_params
     params.permit(:approval_id, :request_id, :approval_status, :approval_date, :comments)
   end
 

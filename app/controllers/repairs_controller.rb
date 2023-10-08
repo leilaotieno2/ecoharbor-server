@@ -2,28 +2,39 @@ class RepairsController < ApplicationController
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
   rescue_from ActiveRecord::RecordNotFound, with: :render_repair_not_found
 
-  def index
+  def new
   end
 
   def create
+    repair = Repair.create!(repair_params)
+    render json: repair, status: :created
   end
 
   def index
+    render json: Repair.all, status: :ok
   end
 
   def show
+    repair = find_repair
+    render json: repair, status: :ok
   end
 
   def edit
   end
 
   def update
+    repair = find_repair
+    request.update!(repair_params)
+    render json: repair, status: :ok
   end
 
   def delete
   end
 
   def destroy
+    repairs = find_repairs
+    repairs.destroy!
+    head :no_content
   end
 
   private 
