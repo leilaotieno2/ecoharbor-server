@@ -20,7 +20,8 @@ class EmployeesController < ApplicationController
   def show
     employee = Employee.find_by(id: session[:employee_id])
     if employee
-      render json: employee, status: :ok
+      # render json: employee, status: :ok
+      render json: EmployeeSerializer.new(@employee).serialized_json
     else
       render json: { errors: ['Not authorized'] }, status: :unauthorized
     end
