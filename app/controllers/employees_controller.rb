@@ -20,7 +20,7 @@ class EmployeesController < ApplicationController
   def show
     employee = Employee.find_by(id: session[:employee_id])
     if employee
-      render json: employee
+      render json: employee, status: :ok
     else
       render json: { errors: ['Not authorized'] }, status: :unauthorized
     end
@@ -51,7 +51,7 @@ class EmployeesController < ApplicationController
   private 
 
   def employee_params
-    params.permit(:first_name, :last_name, :email, :phone_number, :username, :password, :employment_date, :department_id, :employee_role)
+    params.permit(:first_name, :last_name, :email, :phone_number, :username, :password, :password_confirmation, :employment_date, :department_id, :employee_role)
   end
 
   def find_employee

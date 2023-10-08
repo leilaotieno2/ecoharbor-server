@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-  get 'sessions/create'
-  get 'sessions/destroy'
+ 
   resources :requests
 
   resources :assets_directorys
@@ -16,7 +14,17 @@ Rails.application.routes.draw do
 
   resources :employees
 
-  
+  resources :sessions
+
+  # get 'sessions/new'
+  # get 'sessions/create'
+  # get 'sessions/destroy'
+
+  # post "/signup", to: "employees#create"
+  # get "/me", to:"employees#show"
+  # post "/login", to:"sessions#create"
+  # delete "/logout", to:"sessions#destroy"
+
   # get 'requests/index'
   # get 'requests/create'
   # get 'requests/index'
