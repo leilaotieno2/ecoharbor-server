@@ -31,6 +31,7 @@ departments_data = [
 Department.create(departments_data)
 
 # db/seeds.rb
+Employee.delete_all
 
 employees_data = [
   { first_name: 'Simonette', last_name: 'Pagin', email: 'qjcun4@ecoharb.com', phone_number: '3917017188', username: 'spagin0', password: 'zO8|,', employment_date: '2004-08-29', department_id: 1, employee_role: 'Procurement Manager' },
@@ -46,23 +47,23 @@ employees_data = [
   { first_name: 'Netti', last_name: 'Barlow', email: 'ivlaw4@ecoharb.com', phone_number: '5142772675', username: 'nbarlowa', password: 'uV4.zL', employment_date: '1976-06-02', department_id: 11, employee_role: 'Normal Employee' },
   { first_name: 'Any', last_name: 'Bradford', email: 'pbacf4@ecoharb.com', phone_number: '7475785407', username: 'abradfordb', password: 'nN1`,y!u', employment_date: '1976-11-20', department_id: 12, employee_role: 'Normal Employee' },
   { first_name: 'Torry', last_name: 'Bortolomei', email: 'wilzv7@ecoharb.com', phone_number: '2025618493', username: 'tbortolomeic', password: 'oJ1/', employment_date: '1985-08-29', department_id: 13, employee_role: 'Normal Employee' },
-  { first_name: 'Berthe', last_name: 'Gantz', email: 'qizsk9@ecoharb.com', phone_number: '4749036496', username: 'bgantzd', password: 'pJ9%', employment_date: '1999-04-19', department_id: 14, employee_role: 'Normal Employee' },
-  { first_name: 'Karola', last_name: 'Coggon', email: 'mnkwj8@ecoharb.com', phone_number: '4389879370', username: 'kcoggone', password: 'uI0!V', employment_date: '2018-01-14', department_id: 15, employee_role: 'Normal Employee' },
-  { first_name: 'Cordell', last_name: 'Seery', email: 'ptqzk4@ecoharb.com', phone_number: '1807564835', username: 'cseeryf', password: 'dN5;.', employment_date: '1992-10-30', department_id: 16, employee_role: 'Procurement Manager' },
-  { first_name: 'Merrile', last_name: 'Kitchen', email: 'fsaft6@ecoharb.com', phone_number: '2372623328', username: 'mkitcheng', password: 'pW0=', employment_date: '2011-05-15', department_id: 17, employee_role: 'Finance' },
-  { first_name: 'Beverley', last_name: 'Got', email: 'vflso6@ecoharb.com', phone_number: '4682162569', username: 'bgoth', password: 'qM1"', employment_date: '2008-01-14', department_id: 18, employee_role: 'Normal Employee' },
-  { first_name: 'Elliot', last_name: 'Mogie', email: 'jxppk9@ecoharb.com', phone_number: '8368135712', username: 'emogiei', password: 'yX4+E$f', employment_date: '1985-04-23', department_id: 19, employee_role: 'Normal Employee' },
-  { first_name: 'Liam', last_name: 'Draysey', email: 'cekeh0@ecoharb.com', phone_number: '4741740011', username: 'ldrayseyj', password: 'wA1`jw?', employment_date: '2003-05-05', department_id: 20, employee_role: 'Normal Employee' },
-  { first_name: 'Costanza', last_name: 'Crunkhurn', email: 'gyisq0@ecoharb.com', phone_number: '3851380405', username: 'ccrunkhurnk', password: 'wT9{', employment_date: '2010-07-11', department_id: 21, employee_role: 'Admin' },
-  { first_name: 'Madelina', last_name: 'Gamett', email: 'sergs7@ecoharb.com', phone_number: '5041065012', username: 'mgamettl', password: 'aO5}', employment_date: '2014-02-18', department_id: 22, employee_role: 'Normal Employee' },
-  { first_name: 'Baillie', last_name: 'Dybell', email: 'xmcxj5@ecoharb.com', phone_number: '2287818423', username: 'bdybellm', password: 'sQ2/', employment_date: '2008-06-06', department_id: 23, employee_role: 'Normal Employee' },
-  { first_name: 'Nata', last_name: 'Heningham', email: 'wmabb0@ecoharb.com', phone_number: '8622040239', username: 'nheninghamn', password: 'gN9+5', employment_date: '1996-12-21', department_id: 24, employee_role: 'Normal Employee' },
-  { first_name: 'Reinald', last_name: 'Deavall', email: 'herml4@ecoharb.com', phone_number: '3989407162', username: 'rdeavallo', password: 'yP4+c+R', employment_date: '1981-01-28', department_id: 25, employee_role: 'Normal Employee' },
-  { first_name: 'Kellsie', last_name: 'Cockrell', email: 'qnjwa6@ecoharb.com', phone_number: '4846304935', username: 'kcockrellp', password: 'eK4!pk', employment_date: '1988-06-27', department_id: 26, employee_role: 'Normal Employee' },
-  { first_name: 'Claudina', last_name: 'Milvarnie', email: 'hbwab9@ecoharb.com', phone_number: '7493420928', username: 'cmilvarnieq', password: 'yK1/@$', employment_date: '2023-05-24', department_id: 27, employee_role: 'Normal Employee' },
-  { first_name: 'Sam', last_name: 'Baptista', email: 'aachr7@ecoharb.com', phone_number: '1537320097', username: 'sbaptistar', password: 'qM8/BW', employment_date: '2010-09-08', department_id: 28, employee_role: 'Finance' },
-  { first_name: 'Hillyer', last_name: 'Bricknell', email: 'uejhs5@ecoharb.com', phone_number: '9823905472', username: 'hbricknells', password: 'tZ6$', employment_date: '1996-08-18', department_id: 29, employee_role: 'Normal Employee' },
-  { first_name: 'Martelle', last_name: 'Armatys', email: 'csvjh7@ecoharb.com', phone_number: '8425430087', username: 'marmatyst', password: 'mJ3\?', employment_date: '1972-05-01', department_id: 30, employee_role: 'Normal Employee' }
+  { first_name: 'Berthe', last_name: 'Gantz', email: 'qizsk9@ecoharb.com', phone_number: '4749036496', username: 'bgantzd', password: 'pJ9%', employment_date: '1999-04-19', department_id: 1, employee_role: 'Normal Employee' },
+  { first_name: 'Karola', last_name: 'Coggon', email: 'mnkwj8@ecoharb.com', phone_number: '4389879370', username: 'kcoggone', password: 'uI0!V', employment_date: '2018-01-14', department_id: 2, employee_role: 'Normal Employee' },
+  { first_name: 'Cordell', last_name: 'Seery', email: 'ptqzk4@ecoharb.com', phone_number: '1807564835', username: 'cseeryf', password: 'dN5;.', employment_date: '1992-10-30', department_id: 3, employee_role: 'Procurement Manager' },
+  { first_name: 'Merrile', last_name: 'Kitchen', email: 'fsaft6@ecoharb.com', phone_number: '2372623328', username: 'mkitcheng', password: 'pW0=', employment_date: '2011-05-15', department_id: 4, employee_role: 'Finance' },
+  { first_name: 'Beverley', last_name: 'Got', email: 'vflso6@ecoharb.com', phone_number: '4682162569', username: 'bgoth', password: 'qM1"', employment_date: '2008-01-14', department_id: 5, employee_role: 'Normal Employee' },
+  { first_name: 'Elliot', last_name: 'Mogie', email: 'jxppk9@ecoharb.com', phone_number: '8368135712', username: 'emogiei', password: 'yX4+E$f', employment_date: '1985-04-23', department_id: 6, employee_role: 'Normal Employee' },
+  { first_name: 'Liam', last_name: 'Draysey', email: 'cekeh0@ecoharb.com', phone_number: '4741740011', username: 'ldrayseyj', password: 'wA1`jw?', employment_date: '2003-05-05', department_id: 7, employee_role: 'Normal Employee' },
+  { first_name: 'Costanza', last_name: 'Crunkhurn', email: 'gyisq0@ecoharb.com', phone_number: '3851380405', username: 'ccrunkhurnk', password: 'wT9{', employment_date: '2010-07-11', department_id: 8, employee_role: 'Admin' },
+  { first_name: 'Madelina', last_name: 'Gamett', email: 'sergs7@ecoharb.com', phone_number: '5041065012', username: 'mgamettl', password: 'aO5}', employment_date: '2014-02-18', department_id: 9, employee_role: 'Normal Employee' },
+  { first_name: 'Baillie', last_name: 'Dybell', email: 'xmcxj5@ecoharb.com', phone_number: '2287818423', username: 'bdybellm', password: 'sQ2/', employment_date: '2008-06-06', department_id: 10, employee_role: 'Normal Employee' },
+  { first_name: 'Nata', last_name: 'Heningham', email: 'wmabb0@ecoharb.com', phone_number: '8622040239', username: 'nheninghamn', password: 'gN9+5', employment_date: '1996-12-21', department_id: 11, employee_role: 'Normal Employee' },
+  { first_name: 'Reinald', last_name: 'Deavall', email: 'herml4@ecoharb.com', phone_number: '3989407162', username: 'rdeavallo', password: 'yP4+c+R', employment_date: '1981-01-28', department_id: 12, employee_role: 'Normal Employee' },
+  { first_name: 'Kellsie', last_name: 'Cockrell', email: 'qnjwa6@ecoharb.com', phone_number: '4846304935', username: 'kcockrellp', password: 'eK4!pk', employment_date: '1988-06-27', department_id: 13, employee_role: 'Normal Employee' },
+  { first_name: 'Claudina', last_name: 'Milvarnie', email: 'hbwab9@ecoharb.com', phone_number: '7493420928', username: 'cmilvarnieq', password: 'yK1/@$', employment_date: '2023-05-24', department_id: 1, employee_role: 'Normal Employee' },
+  { first_name: 'Sam', last_name: 'Baptista', email: 'aachr7@ecoharb.com', phone_number: '1537320097', username: 'sbaptistar', password: 'qM8/BW', employment_date: '2010-09-08', department_id: 2, employee_role: 'Finance' },
+  { first_name: 'Hillyer', last_name: 'Bricknell', email: 'uejhs5@ecoharb.com', phone_number: '9823905472', username: 'hbricknells', password: 'tZ6$', employment_date: '1996-08-18', department_id: 3, employee_role: 'Normal Employee' },
+  { first_name: 'Martelle', last_name: 'Armatys', email: 'csvjh7@ecoharb.com', phone_number: '8425430087', username: 'marmatyst', password: 'mJ3\?', employment_date: '1972-05-01', department_id: 4, employee_role: 'Normal Employee' }
 ]
 
 Employee.create(employees_data)
