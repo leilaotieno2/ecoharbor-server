@@ -1,36 +1,40 @@
+# app/controllers/employees_controller.rb
+
 class EmployeesController < ApplicationController
-    before_action :authenticate_user!
-  
-    def index
-      @employees = Employee.all
-    end
-  
-    def show
-      @employee = Employee.find(params[:id])
-    end
-  
-    def new
-      @employee = Employee.new
-    end
-  
-    def create
-      @employee = Employee.new(employee_params)
-  
-      if @employee.save
-        # Handle successful employee creation, e.g., redirect to index page
-        redirect_to employees_path, notice: 'Employee was successfully created.'
-      else
-        # Handle validation errors, e.g., show the form again with error messages
-        render :new
-      end
-    end
-  
-    # Define other CRUD actions: edit, update, destroy
-  
-    private
-  
-    def employee_params
-      params.require(:employee).permit(:first_name, :last_name, :email, :phone_number, :username, :password, :employment_date, :department_id, :employee_role)
+  before_action :set_employee, only: [:show]
+ 
+  def index
+    @employees = Employee.all
+    render json: @employees
+  end
+
+
+  # POST /employees
+  def create
+    @employee = Employee.new(employee_params)
+
+    if @employee.save
+      render json: @employee, status: :created
+    else
+      render json: @employee.errors, status: :unprocessable_entity
     end
   end
-  
+
+  # GET /employees/:id
+  def show
+    render json: @employee
+  end
+
+  private
+
+  def set_employee
+    @employee = Employee.find(params[:id])
+  end
+
+  def employee_params
+    params.require(:employee).permit(
+      :first_name, :last_name, :email, :phone_number,
+      :username, :password, :employment_date, :department_id, :employee_role
+    )
+  end
+end
