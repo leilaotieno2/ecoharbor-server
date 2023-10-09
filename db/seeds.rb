@@ -30,7 +30,6 @@ departments_data = [
 
 Department.create(departments_data)
 
-
 # db/seeds.rb
 
 employees_data = [
@@ -163,7 +162,7 @@ approvals_data = [
   { approval_id: 50, request_id: 50, approval_status: 'approved', approval_date: '12/10/1986', comments: 'ut tellus nulla ut erat id mauris' }
 ]
 
-Aprroval.create(approvals_data)
+Approval.create(approvals_data)
 # seeds.rb
 
 allocations_data = [
