@@ -1,13 +1,13 @@
 # app/controllers/employees_controller.rb
 
 class EmployeesController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [:create]
   before_action :set_employee, only: [:show]
- 
+
   def index
     @employees = Employee.all
     render json: @employees
   end
-
 
   # POST /employees
   def create
