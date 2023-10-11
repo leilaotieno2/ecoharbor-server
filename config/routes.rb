@@ -12,7 +12,11 @@ Rails.application.routes.draw do
 
   resources :allocations
 
-  resources :employees
+  # we define routes for employees using resources
+  # resources generate REST API design for the user using _username as a parameter. 
+  resources :employees, param: :username
+  post '/auth/login', to: 'authentication#login', controller: 'api'
+  get '/*a', to: 'application#not_found'
 
   resources :sessions
 

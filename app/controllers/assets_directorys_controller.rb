@@ -6,12 +6,12 @@ class AssetsDirectorysController < ApplicationController
   end
 
   def create
-    asset = Asset.create!(asset_params)
+    asset = AssetsDirectory.create!(asset_params)
     render json: asset, status: :created
   end
 
   def index
-    render json: Asset.all, status: :ok
+    render json: AssetsDirectory.all, status: :ok
   end
 
   def show
@@ -44,7 +44,7 @@ class AssetsDirectorysController < ApplicationController
   end
 
   def find_asset
-    asset = Asset.find(params[:id])
+    asset = AssetsDirectory.find(params[:id])
   end
 
   def render_unprocessable_entity(invalid)

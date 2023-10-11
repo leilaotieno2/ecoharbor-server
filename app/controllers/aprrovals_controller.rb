@@ -11,7 +11,7 @@ class AprrovalsController < ApplicationController
   end
 
   def index
-    render json: Arrovals.all, status: :ok
+    render json: Aprroval.all, status: :ok
   end
 
   def show
