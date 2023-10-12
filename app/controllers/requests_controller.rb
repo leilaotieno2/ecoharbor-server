@@ -1,4 +1,3 @@
-# app/controllers/requests_controller.rb
 class RequestsController < ApplicationController
     before_action :set_request, only: [:show, :edit, :update, :destroy]
   
@@ -31,6 +30,12 @@ class RequestsController < ApplicationController
     def destroy
       @request.destroy
       head :no_content
+    end
+  
+    def seed_data
+      # Load data from Rails seeds
+      @seeded_requests = Request.where(created_at: 1.day.ago..Time.now)
+      render json: @seeded_requests
     end
   
     private
