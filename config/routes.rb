@@ -39,7 +39,8 @@ Rails.application.routes.draw do
     get 'manager/pending_requests' => 'requests#pending_requests'
     get 'manager/completed_requests' => 'requests#completed_requests'
   
-    # Other custom routes as needed
+    resources :requests
+
   
     # ...
   
