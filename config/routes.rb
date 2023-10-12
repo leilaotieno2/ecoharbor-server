@@ -39,7 +39,11 @@ Rails.application.routes.draw do
     get 'manager/pending_requests' => 'requests#pending_requests'
     get 'manager/completed_requests' => 'requests#completed_requests'
   
-    resources :requests
+# config/routes.rb
+Rails.application.routes.draw do
+  resources :requests, only: [:index, :show, :create, :update, :destroy]
+end
+
 
   
     # ...
