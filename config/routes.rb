@@ -6,7 +6,18 @@ Rails.application.routes.draw do
   # root "articles#index"
   root 'render#index'
 
+  # resources :requests
 
+  resources :assets_directorys
+
+  resources :repairs
+
+
+  # resources :aprrovals
+
+  resources :allocations
+
+ 
 
     # Resources for Employees
     resources :employees

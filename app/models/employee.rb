@@ -1,5 +1,7 @@
 class Employee < ApplicationRecord
   belongs_to :department
+
+  attr_accessor :password
   
   validates :department_id, inclusion: { in: ->(_) { Department.valid_department_ids }, message: "is not a valid department ID" }
   validates :first_name, presence: true
