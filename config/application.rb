@@ -5,7 +5,7 @@ require "rails/all"
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
-config.action_controller.default_protect_from_forgery = true
+# config.action_controller.default_protect_from_forgery = true
 
 module EcoharborServer
   class Application < Rails::Application
