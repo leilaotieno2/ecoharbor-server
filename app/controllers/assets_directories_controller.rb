@@ -1,0 +1,2 @@
+class AssetsDirectoriesController < ApplicationController
+end

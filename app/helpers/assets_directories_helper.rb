@@ -1,0 +1,2 @@
+module AssetsDirectoriesHelper
+end
