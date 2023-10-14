@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   resources :assets_directorys
 
   resources :repairs
-
-
+  resources :employees
+  resources :departments
   # resources :aprrovals
 
   resources :allocations
@@ -20,27 +20,27 @@ Rails.application.routes.draw do
  
 
     # Resources for Employees
-    resources :employees
+ 
   
     # Resources for Assets
-    resources :assets do
-      resources :allocations, only: [:new, :create, :edit, :update]
-      resources :repairs, only: [:new, :create, :edit, :update]
-    end
+    # resources :assets do
+    #   resources :allocations, only: [:new, :create, :edit, :update]
+    #   resources :repairs, only: [:new, :create, :edit, :update]
+    # end
   
     # Resources for Departments
-    resources :departments
-  
+ 
+  resources :requests
     # Resources for Requests
-    resources :requests do
-      member do
-        post 'approve'
-        post 'reject'
-      end
-    end
+    # resources :requests do
+    #   member do
+    #     post 'approve'
+    #     post 'reject'
+    #   end
+    # end
   
     # Resources for Approvals (Procurement Manager)
-    resources :approvals, only: [:index, :show]
+    resources :approvals
   
     # Custom routes for user-specific requests
     get 'user/requests' => 'requests#user_requests'

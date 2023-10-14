@@ -3,9 +3,6 @@ class AssetsDirectorysController < ApplicationController
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
   rescue_from ActiveRecord::RecordNotFound, with: :render_asset_not_found
 
-  def new
-  end
-
   def create
     asset = AssetsDirectory.create!(asset_params)
     render json: asset, status: :created
@@ -20,16 +17,10 @@ class AssetsDirectorysController < ApplicationController
     render json: asset, status: :ok
   end
 
-  def edit
-  end
-
   def update
     asset = find_asset
-    car.update!(asset_params)
+    asset.update!(asset_params)
     render json: asset, status: :ok
-  end
-
-  def delete
   end
 
   def destroy
@@ -41,7 +32,7 @@ class AssetsDirectorysController < ApplicationController
   private 
 
   def asset_params
-    params.permit(:asset_id, :asset_name, :category_code, :category_code, :condition, :status, :purchase_value, :current_value, :quantity_in_stock, :department_id)
+    params.permit(:asset_id, :asset_name, :category_code, :condition, :status, :purchase_value, :current_value, :quantity_in_stock, :department_id, :asset_image)
   end
 
   def find_asset

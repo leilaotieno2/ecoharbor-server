@@ -2,9 +2,6 @@ class DepartmentsController < ApplicationController
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
   rescue_from ActiveRecord::RecordNotFound, with: :render_department_not_found
 
-  def new
-  end
-
   def create
     department = Department.create!(department_params)
     render json: department, status: :created
@@ -19,8 +16,6 @@ class DepartmentsController < ApplicationController
     render json: department, status: :ok
   end
 
-  def edit
-  end
 
   def update
     department = find_department

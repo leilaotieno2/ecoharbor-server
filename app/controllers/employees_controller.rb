@@ -1,40 +1,55 @@
 # app/controllers/employees_controller.rb
 
 class EmployeesController < ApplicationController
-  skip_before_action :verify_authenticity_token, only: [:create]
-  before_action :set_employee, only: [:show]
+  rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
+  rescue_from ActiveRecord::RecordNotFound, with: :render_employee_not_found
+
 
   def index
-    @employees = Employee.all
-    render json: @employees
+    render json: Employee.all, status: :ok
   end
 
   # POST /employees
   def create
-    @employee = Employee.new(employee_params)
-
-    if @employee.save
-      render json: @employee, status: :created
-    else
-      render json: @employee.errors, status: :unprocessable_entity
-    end
-  end
+    employee = Employee.create!(employee_params)
+    render json: employees, status: :created
+ end
 
   # GET /employees/:id
   def show
-    render json: @employee
+    employee = find_employee
+    render json: employee, status: :ok
+  end
+
+  def update
+    employee = find_employee
+    employee.update!(employee_params)
+    render json: employee, status: :ok
+  end
+
+  def destroy
+    employee = find_employee
+    employee.destroy
+    head :no_content
   end
 
   private
 
-  def set_employee
-    @employee = Employee.find(params[:id])
+  def find_employee
+    employee = Employee.find(params[:id])
   end
 
   def employee_params
-    params.require(:employee).permit(
-      :first_name, :last_name, :email, :phone_number,
+    params.permit(:first_name, :last_name, :email, :phone_number,
       :username, :password, :employment_date, :department_id, :employee_role
     )
+  end
+
+   def render_unprocessable_entity(invalid)
+    render json: { errors: invalid.record.errors.full_messages }, status: :unprocessable_entity
+  end
+
+  def render_employee_not_found
+    render json: { error: 'Employee record not found, try again' }, status: :not_found
   end
 end

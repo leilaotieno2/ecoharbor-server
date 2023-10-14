@@ -25,6 +25,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_08_142124) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "approvals", force: :cascade do |t|
+    t.integer "approval_id"
+    t.integer "request_id"
+    t.text "approval_status"
+    t.date "approval_date"
+    t.text "comments"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "aprrovals", force: :cascade do |t|
     t.integer "approval_id"
     t.integer "request_id"
