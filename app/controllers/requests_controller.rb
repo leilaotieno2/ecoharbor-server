@@ -3,9 +3,6 @@ class RequestsController < ApplicationController
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
   rescue_from ActiveRecord::RecordNotFound, with: :render_request_not_found
 
-  def new
-  end
-
   def create
     request = Request.create!(request_params)
     render json: request, status: :created
@@ -20,16 +17,10 @@ class RequestsController < ApplicationController
     render json: request, status: :ok
   end
 
-  def edit
-  end
-
   def update
     request = find_request
     request.update!(request_params)
     render json: request, status: :ok
-  end
-
-  def delete
   end
 
   def destroy

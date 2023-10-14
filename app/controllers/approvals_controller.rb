@@ -2,9 +2,6 @@ class ApprovalsController < ApplicationController
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
   rescue_from ActiveRecord::RecordNotFound, with: :render_approval_not_found
 
-  def new
-  end
-
   def create
     approval = Approval.create!(approval_params)
     render json: approval, status: :created
@@ -19,16 +16,10 @@ class ApprovalsController < ApplicationController
     render json: approval, status: :ok
   end
 
-  def edit
-  end
-
   def update
     approval = find_approval
     approval.update!(approval_params)
     render json: approval, status: :ok
-  end
-
-  def delete
   end
 
   def destroy

@@ -2,9 +2,6 @@ class AllocationsController < ApplicationController
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
   rescue_from ActiveRecord::RecordNotFound, with: :render_allocation_not_found
 
-  def new
-  end
-
   def create
     allocation = Allocation.create!(allocation_params)
     render json: allocation, status: :created
@@ -19,16 +16,10 @@ class AllocationsController < ApplicationController
     render json: allocation, status: :ok
   end
 
-  def edit
-  end
-
   def update
     allocation = find_allocation
     allocation.update!(allocation_params)
     render json: allocation, status: :ok
-  end
-
-  def delete
   end
 
   def destroy

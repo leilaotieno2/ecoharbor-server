@@ -2,9 +2,6 @@ class RepairsController < ApplicationController
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
   rescue_from ActiveRecord::RecordNotFound, with: :render_repair_not_found
 
-  def new
-  end
-
   def create
     repair = Repair.create!(repair_params)
     render json: repair, status: :created
@@ -19,32 +16,26 @@ class RepairsController < ApplicationController
     render json: repair, status: :ok
   end
 
-  def edit
-  end
-
   def update
     repair = find_repair
-    request.update!(repair_params)
+    repair.update!(repair_params)
     render json: repair, status: :ok
   end
 
-  def delete
-  end
-
   def destroy
-    repairs = find_repairs
+    repairs = find_repair
     repairs.destroy!
     head :no_content
   end
 
   private 
 
-  def repairs_params
+  def repair_params
     params.permit(:repair_id, :asset_id, :quantity, :checkin_date, :checkout_date, :department_name)
   end
 
   def find_repair
-    repair = Reqpair.find(params[:id])
+    repair = Repair.find(params[:id])
   end
 
   def render_unprocessable_entity(invalid)
