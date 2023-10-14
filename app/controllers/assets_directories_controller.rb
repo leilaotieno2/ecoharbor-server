@@ -25,3 +25,39 @@ def create
         render json: { error: "Unauthorized. Only procurement admins can create assets."}, status: :Unauthorized    
     end
 end
+
+# Update asset. Only procurement manager can update asset details
+def update
+    @asset = AssetDirectory.find(params[:id])
+
+    if current_user.procurement_admin?
+        if @asset.update(asset_params)
+            render json: @asset, status: :ok
+        else
+            render json: @asset.errors, status: :unprocessable_entity
+        end
+    else
+        render json: { error: "Unauthorized. Only procurement admins can edit this asset"}, status: :unauthorized       
+
+    end
+end
+
+
+# Delete an asset. Only procurement admin can delete an asset
+
+def destroy
+    @asset = AssetDirectory.find(params[:id])
+
+    if current_user.procurement_admin?
+        @asset.destroy 
+        head :no_content 
+    else 
+        render json: { error: "Unauthorized. Only procurement admins can delete this asset."}, status: :unauthorized        
+    end
+end
+
+private
+
+def asset_params
+    params.require(:asset_directory).permit(:asset_name, :category_name, :category_code, :condition, :status, :purchase_value, :quantity_in_stock, :department_id, :asset_image)
+end
