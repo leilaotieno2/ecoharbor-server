@@ -1,7 +1,6 @@
 class CreateAssetsDirectories < ActiveRecord::Migration[7.0]
   def change
     create_table :assets_directories do |t|
-      t.integer :asset_id
       t.string :asset_name
       t.string :category_name
       t.string :category_code

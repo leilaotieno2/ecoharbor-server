@@ -1,7 +1,6 @@
 class CreateRequests < ActiveRecord::Migration[7.0]
   def change
     create_table :requests do |t|
-      t.primary_key :id
       t.integer :request_id
       t.integer :asset_id
       t.text :urgency
