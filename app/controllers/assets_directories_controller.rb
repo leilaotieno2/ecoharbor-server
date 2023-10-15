@@ -65,7 +65,7 @@ end
 
 # custom method to render unauthorized response
 def render_unauthorized
-    render json: { error: "Unauthorized. Only procurement admins can perform this action."}, status: :unauthorized 
+    render json: { error: "Unauthorized. Only procurement admins can perform this action."}, status: :unauthorized  
 end
 
 # cutom method to render error response
