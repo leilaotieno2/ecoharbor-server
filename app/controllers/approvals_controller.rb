@@ -3,7 +3,7 @@ class ApprovalsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :render_approval_not_found
 
   def create
-    approval = Approval.create!(approval_params)
+    approval = Approval.create(approval_params)
     render json: approval, status: :created
   end
 

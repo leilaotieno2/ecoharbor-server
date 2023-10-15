@@ -4,7 +4,7 @@ class AssetsDirectorysController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :render_asset_not_found
 
   def create
-    asset = AssetsDirectory.create!(asset_params)
+    asset = AssetsDirectory.create(asset_params)
     render json: asset, status: :created
   end
 

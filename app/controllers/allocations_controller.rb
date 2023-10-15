@@ -3,7 +3,7 @@ class AllocationsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :render_allocation_not_found
 
   def create
-    allocation = Allocation.create!(allocation_params)
+    allocation = Allocation.create(allocation_params)
     render json: allocation, status: :created
   end
 

@@ -1,6 +1,9 @@
 # app/controllers/employees_controller.rb
 
 class EmployeesController < ApplicationController
+
+  skip_before_action :verify_authenticity_token
+  
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
   rescue_from ActiveRecord::RecordNotFound, with: :render_employee_not_found
 
@@ -11,9 +14,9 @@ class EmployeesController < ApplicationController
 
   # POST /employees
   def create
-    employee = Employee.create!(employee_params)
-    render json: employees, status: :created
- end
+    employee = Employee.create(employee_params)
+    render json: employee, status: :created
+  end
 
   # GET /employees/:id
   def show
@@ -40,7 +43,7 @@ class EmployeesController < ApplicationController
   end
 
   def employee_params
-    params.permit(:first_name, :last_name, :email, :phone_number,
+    params.require(:employee).permit(:first_name, :last_name, :email, :phone_number,
       :username, :password, :employment_date, :department_id, :employee_role
     )
   end

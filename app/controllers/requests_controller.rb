@@ -1,10 +1,12 @@
 class RequestsController < ApplicationController
 
+  skip_before_action :verify_authenticity_token
+
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
   rescue_from ActiveRecord::RecordNotFound, with: :render_request_not_found
 
   def create
-    request = Request.create!(request_params)
+    request = Request.create(request_params)
     render json: request, status: :created
   end
 
@@ -32,8 +34,9 @@ class RequestsController < ApplicationController
   private 
 
   def request_params
-    params.permit(:repair_id, :asset_id, :urgency, :quantity, :reason, :employee_id, :request_date, :approval_date, :request_status)
+    params.require(:request).permit(:id, :request_id, :asset_id, :urgency, :quantity, :reason, :employee_id, :request_date, :approval_date, :request_status)
   end
+
   
   def find_request
     request = Request.find(params[:id])

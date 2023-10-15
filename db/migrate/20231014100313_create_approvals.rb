@@ -1,6 +1,6 @@
-class CreateAprrovals < ActiveRecord::Migration[7.0]
+class CreateApprovals < ActiveRecord::Migration[7.0]
   def change
-    create_table :aprrovals do |t|
+    create_table :approvals do |t|
       t.integer :approval_id
       t.integer :request_id
       t.text :approval_status
@@ -9,5 +9,6 @@ class CreateAprrovals < ActiveRecord::Migration[7.0]
 
       t.timestamps
     end
+    add_index :approvals, :request_id
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_08_142124) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_14_100843) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -33,16 +33,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_08_142124) do
     t.text "comments"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "aprrovals", force: :cascade do |t|
-    t.integer "approval_id"
-    t.integer "request_id"
-    t.text "approval_status"
-    t.date "approval_date"
-    t.text "comments"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["request_id"], name: "index_approvals_on_request_id"
   end
 
   create_table "assets_directories", force: :cascade do |t|
@@ -69,7 +60,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_08_142124) do
     t.integer "total_assets"
     t.decimal "asset_total_value"
     t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "
+    updated_at", null: false
   end
 
   create_table "employees", force: :cascade do |t|
@@ -78,12 +70,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_08_142124) do
     t.string "email"
     t.bigint "phone_number"
     t.string "username"
-    t.string "password_digest"
+    t.string "password"
     t.date "employment_date"
     t.integer "department_id"
     t.text "employee_role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
 
   create_table "repairs", force: :cascade do |t|
@@ -111,5 +104,4 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_08_142124) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "employees", "departments"
 end

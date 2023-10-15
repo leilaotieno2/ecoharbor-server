@@ -3,7 +3,7 @@ class DepartmentsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :render_department_not_found
 
   def create
-    department = Department.create!(department_params)
+    department = Department.create(department_params)
     render json: department, status: :created
   end
 

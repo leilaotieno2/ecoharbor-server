@@ -11,7 +11,7 @@ gem "sprockets-rails"
 
 gem 'rack-cors'
 
-
+gem 'faker', '~> 3.2'
 
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"

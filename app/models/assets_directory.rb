@@ -1,6 +1,6 @@
 class AssetsDirectory < ApplicationRecord
   belongs_to :department
-  has_many :repairs, dependent: :nullify
+  has_many :repairs#, dependent: :nullify
 
   # after_destroy :reduce_department_assets
   # after_create :increase_department_assets
