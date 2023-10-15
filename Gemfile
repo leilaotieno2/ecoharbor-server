@@ -81,3 +81,6 @@ group :test do
   gem "webdrivers"
 
 end
+
+gem "devise", "~> 4.9"
+gem "devise-api", "~> 0.1.3"

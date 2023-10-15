@@ -24,8 +24,8 @@ default: &default
 development:
   <<: *default
   database: ecoharbor_server_development
-  username: morynmoh
-  password: morynmoh
+  username: baraka
+  password: baraka
   host: localhost
   port: 5432  
   # The specified database role being used to connect to postgres.
@@ -61,9 +61,8 @@ development:
 test:
   <<: *default
   database: ecoharbor_server_test
-  database: ecoharbor_server_development
-  username: morynmoh
-  password: morynmoh
+  username: baraka
+  password: baraka
   host: localhost
   port: 5432 
 
