@@ -5,7 +5,7 @@ end
 
 # List all assets
 def index
-    @assets = AssetDirectory.all 
+    @assets = AssetsDirectory.all 
     render json: @assets 
 end
 
@@ -16,10 +16,10 @@ end
 # Create an Asset. Permit Procurement Admin only 
 def create 
     if current_user.procurement_admin? 
-        @asset = AssetDirectory.new(asset_params)
+        @asset = AssetsDirectory.new(asset_params)
 
         if @asset.save
-            render json: @asset, status: : created
+            render json: @asset, status: :created
         else 
             render_errors(@asset)
         end
@@ -30,7 +30,7 @@ end
 
 # Update asset. Only procurement manager can update asset details
 def update
-    @asset = AssetDirectory.find(params[:id])
+    @asset = AssetsDirectory.find(params[:id])
 
     if current_user.procurement_admin?
         if @asset.update(asset_params)
@@ -47,7 +47,7 @@ end
 # Delete an asset. Only procurement admin can delete an asset
 
 def destroy
-    @asset = AssetDirectory.find(params[:id])
+    @asset = AssetsDirectory.find(params[:id])
 
     if current_user.procurement_admin?
         @asset.destroy 

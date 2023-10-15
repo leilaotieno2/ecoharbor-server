@@ -7,8 +7,10 @@ Rails.application.routes.draw do
   root 'render#index'
 
 
+  # Resources for assets_directories
+    resources :assets_directories, only: [:index, :show, :create, :update, :destroy]
 
-    # Resources for Employees
+  # Resources for Employees
     resources :employees
   
     # Resources for Assets
