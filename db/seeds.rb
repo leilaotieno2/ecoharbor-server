@@ -30,8 +30,7 @@ departments_data = [
 
 Department.create(departments_data)
 
-# db/seeds.rb
-Employee.delete_all
+
 
 employees_data = [
   { first_name: 'Simonette', last_name: 'Pagin', email: 'qjcun4@ecoharb.com', phone_number: '3917017188', username: 'spagin0', password: 'zO8|,', employment_date: '2004-08-29', department_id: 1, employee_role: 'Procurement Manager' },
@@ -229,57 +228,19 @@ Repair.create(repairs_data)
 
 
 requests_data = [
-  { request_id: 1, asset_id: 'Jaime', urgency: 'Low', quantity: 1, reason: 'odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit', employee_id: 10 },
-  { request_id: 2, asset_id: 'Minor', urgency: 'Low', quantity: 2, reason: 'sed sagittis nam congue risus semper porta volutpat quam', employee_id: 11 },
-  { request_id: 3, asset_id: 'Rozanne', urgency: 'Low', quantity: 1, reason: 'nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna', employee_id: 8 },
-  { request_id: 4, asset_id: 'Leupold', urgency: 'High', quantity: 2, reason: 'sollicitudin mi sit amet lobortis sapien sapien non mi', employee_id: 6 },
-  { request_id: 5, asset_id: 'Tess', urgency: 'Low', quantity: 1, reason: 'vitae quam suspendisse potenti nullam porttitor lacus at turpis donec posuere', employee_id: 12 },
-  { request_id: 6, asset_id: 'Elna', urgency: 'Critical', quantity: 1, reason: 'praesent blandit nam nulla integer pede justo lacinia eget tincidunt eget', employee_id: 8 },
-  { request_id: 7, asset_id: 'Faydra', urgency: 'High', quantity: 1, reason: 'turpis integer aliquet massa id lobortis convallis', employee_id: 3 },
-  { request_id: 8, asset_id: 'Bab', urgency: 'Low', quantity: 1, reason: 'ultrices vel augue vestibulum ante ipsum primis', employee_id: 7 },
-  { request_id: 9, asset_id: 'Pansy', urgency: 'Medium', quantity: 1, reason: 'convallis duis consequat dui nec nisi volutpat eleifend donec', employee_id: 3 },
-  { request_id: 10, asset_id: 'Katherina', urgency: 'Critical', quantity: 3, reason: 'nunc proin at turpis a pede posuere nonummy integer non', employee_id: 11 },
-  { request_id: 11, asset_id: 'Hakim', urgency: 'Critical', quantity: 1, reason: 'lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed magna', employee_id: 6 },
-  { request_id: 12, asset_id: 'Jeri', urgency: 'High', quantity: 3, reason: 'quisque porta volutpat erat quisque erat eros viverra eget congue eget', employee_id: 6 },
-  { request_id: 13, asset_id: 'Rikki', urgency: 'High', quantity: 2, reason: 'nulla eget eros elementum pellentesque quisque porta volutpat erat quisque', employee_id: 4 },
-  { request_id: 14, asset_id: 'Frasquito', urgency: 'High', quantity: 2, reason: 'gravida nisi at nibh in hac habitasse platea dictumst aliquam', employee_id: 4 },
-  { request_id: 15, asset_id: 'Berty', urgency: 'Critical', quantity: 1, reason: 'semper sapien a libero nam dui proin leo odio', employee_id: 10 },
-  { request_id: 16, asset_id: 'Jordana', urgency: 'Critical', quantity: 1, reason: 'aliquet at feugiat non pretium', employee_id: 11 },
-  { request_id: 17, asset_id: 'Nonna', urgency: 'Low', quantity: 3, reason: 'ligula pellentesque ultrices phasellus id sapien in', employee_id: 10 },
-  { request_id: 18, asset_id: 'Augustine', urgency: 'Low', quantity: 1, reason: 'tristique in tempus sit amet sem fusce consequat', employee_id: 7 },
-  { request_id: 19, asset_id: 'Tate', urgency: 'Medium', quantity: 2, reason: 'penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis sapien cum', employee_id: 11 },
-  { request_id: 20, asset_id: 'Brennan', urgency: 'High', quantity: 1, reason: 'justo eu massa donec dapibus duis at velit eu', employee_id: 13 },
-  { request_id: 21, asset_id: 'Gianni', urgency: 'Low', quantity: 3, reason: 'quis turpis eget elit sodales scelerisque mauris sit amet', employee_id: 15 },
-  { request_id: 22, asset_id: 'Gabbie', urgency: 'High', quantity: 1, reason: 'sit amet consectetuer adipiscing elit proin interdum mauris', employee_id: 17 },
-  { request_id: 23, asset_id: 'Helaina', urgency: 'Critical', quantity: 2, reason: 'at velit eu est congue elementum in hac habitasse platea dictumst morbi', employee_id: 1 },
-  { request_id: 24, asset_id: 'Bobbette', urgency: 'Critical', quantity: 2, reason: 'quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue', employee_id: 5 },
-  { request_id: 25, asset_id: 'Erick', urgency: 'Low', quantity: 1, reason: 'ante nulla justo aliquam quis turpis eget elit', employee_id: 4 },
-  { request_id: 26, asset_id: 'Kelcey', urgency: 'Critical', quantity: 1, reason: 'nulla elit ac nulla sed vel enim sit amet nunc viverra dapibus nulla suscipit', employee_id: 11 },
-  { request_id: 27, asset_id: 'Deina', urgency: 'Critical', quantity: 1, reason: 'massa id lobortis convallis tortor', employee_id: 10 },
-  { request_id: 28, asset_id: 'Leticia', urgency: 'Critical', quantity: 1, reason: 'mauris non ligula pellentesque ultrices phasellus id sapien', employee_id: 4 },
-  { request_id: 29, asset_id: 'Dionis', urgency: 'Low', quantity: 1, reason: 'parturient montes nascetur ridiculus mus etiam vel augue vestibulum', employee_id: 3 },
-  { request_id: 30, asset_id: 'Nicolais', urgency: 'High', quantity: 1, reason: 'nam ultrices libero non mattis pulvinar nulla pede ullamcorper augue', employee_id: 2 },
-  { request_id: 31, asset_id: 'Phebe', urgency: 'Medium', quantity: 4, reason: 'in blandit ultrices enim lorem ipsum dolor sit amet consectetuer adipiscing elit proin interdum mauris', employee_id: 6 },
-  { request_id: 32, asset_id: 'Flora', urgency: 'Critical', quantity: 2, reason: 'at dolor quis odio consequat varius integer ac leo pellentesque ultrices mattis odio donec', employee_id: 10 },
-  { request_id: 33, asset_id: 'Fransisco', urgency: 'Low', quantity: 1, reason: 'nibh in lectus pellentesque at nulla suspendisse potenti cras in', employee_id: 2 },
-  { request_id: 34, asset_id: 'Florence', urgency: 'Medium', quantity: 2, reason: 'at turpis donec posuere metus vitae ipsum aliquam non mauris', employee_id: 15 },
-  { request_id: 35, asset_id: 'Arni', urgency: 'Low', quantity: 1, reason: 'nulla integer pede justo lacinia eget tincidunt eget tempus vel', employee_id: 7 },
-  { request_id: 36, asset_id: 'Shalna', urgency: 'High', quantity: 1, reason: 'lacinia aenean sit amet justo morbi ut odio cras mi', employee_id: 7 },
-  { request_id: 37, asset_id: 'Lamond', urgency: 'Medium', quantity: 1, reason: 'primis in faucibus orci luctus et', employee_id: 12 },
-  { request_id: 38, asset_id: 'Chery', urgency: 'Critical', quantity: 4, reason: 'tincidunt lacus at velit vivamus vel nulla eget eros elementum', employee_id: 18 },
-  { request_id: 39, asset_id: 'Keelia', urgency: 'High', quantity: 1, reason: 'at vulputate vitae nisl aenean lectus', employee_id: 17 },
-  { request_id: 40, asset_id: 'Bernadene', urgency: 'Low', quantity: 3, reason: 'mi pede malesuada in imperdiet et commodo', employee_id: 4 },
-  { request_id: 41, asset_id: 'Darbee', urgency: 'Low', quantity: 1, reason: 'in imperdiet et commodo vulputate justo in blandit', employee_id: 4 },
-  { request_id: 42, asset_id: 'Tiebold', urgency: 'Low', quantity: 4, reason: 'metus vitae ipsum aliquam non mauris morbi non lectus aliquam sit amet', employee_id: 4 },
-  { request_id: 43, asset_id: 'Daven', urgency: 'Medium', quantity: 1, reason: 'ligula in lacus curabitur at ipsum ac', employee_id: 6 },
-  { request_id: 44, asset_id: 'Shandeigh', urgency: 'High', quantity: 1, reason: 'quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur', employee_id: 13 },
-  { request_id: 45, asset_id: 'Giselbert', urgency: 'Critical', quantity: 1, reason: 'hac habitasse platea dictumst morbi vestibulum velit id', employee_id: 15 },
-  { request_id: 46, asset_id: 'Emyle', urgency: 'Medium', quantity: 4, reason: 'bibendum felis sed interdum venenatis turpis', employee_id: 4 },
-  { request_id: 47, asset_id: 'Pauletta', urgency: 'High', quantity: 3, reason: 'curabitur in libero ut massa', employee_id: 6 },
-  { request_id: 48, asset_id: 'Hersch', urgency: 'Medium', quantity: 2, reason: 'at nulla suspendisse potenti cras in purus eu magna vulputate luctus cum', employee_id: 2 },
-  { request_id: 49, asset_id: 'Jerrine', urgency: 'Critical', quantity: 1, reason: 'luctus cum sociis natoque penatibus et', employee_id: 3 },
-  { request_id: 50, asset_id: 'Bernadine', urgency: 'Low', quantity: 2, reason: 'condimentum id luctus nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque', employee_id: 12 }
+  { request_id: 1, asset_id: 'Jaime', urgency: 'Low', quantity: 1, reason: 'odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit', employee_id: 10, request_date: '2023-10-13', approval_date: '2023-10-14', request_status: 'Pending' },
+  { request_id: 2, asset_id: 'Minor', urgency: 'Low', quantity: 2, reason: 'sed sagittis nam congue risus semper porta volutpat quam', employee_id: 11, request_date: '2023-10-13', approval_date: '2023-10-14', request_status: 'Approved' },
+  { request_id: 3, asset_id: 'Rozanne', urgency: 'Low', quantity: 1, reason: 'nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna', employee_id: 8, request_date: '2023-10-14', approval_date: '2023-10-15', request_status: 'Rejected' },
+  { request_id: 4, asset_id: 'Leupold', urgency: 'High', quantity: 2, reason: 'sollicitudin mi sit amet lobortis sapien sapien non mi', employee_id: 6, request_date: '2023-10-15', approval_date: '2023-10-16', request_status: 'Approved' },
+  { request_id: 5, asset_id: 'Tess', urgency: 'Low', quantity: 1, reason: 'vitae quam suspendisse potenti nullam porttitor lacus at turpis donec posuere', employee_id: 12, request_date: '2023-10-16', approval_date: '2023-10-17', request_status: 'Pending' },
+  { request_id: 6, asset_id: 'Elna', urgency: 'Critical', quantity: 1, reason: 'praesent blandit nam nulla integer pede justo lacinia eget tincidunt eget', employee_id: 8, request_date: '2023-10-17', approval_date: '2023-10-18', request_status: 'Approved' },
+  { request_id: 7, asset_id: 'Faydra', urgency: 'High', quantity: 1, reason: 'turpis integer aliquet massa id lobortis convallis', employee_id: 3, request_date: '2023-10-18', approval_date: '2023-10-19', request_status: 'Approved' },
+  { request_id: 8, asset_id: 'Bab', urgency: 'Low', quantity: 1, reason: 'ultrices vel augue vestibulum ante ipsum primis', employee_id: 7, request_date: '2023-10-19', approval_date: '2023-10-20', request_status: 'Pending' },
+  { request_id: 9, asset_id: 'Pansy', urgency: 'Medium', quantity: 1, reason: 'convallis duis consequat dui nec nisi volutpat eleifend donec', employee_id: 3, request_date: '2023-10-20', approval_date: '2023-10-21', request_status: 'Approved' },
+  { request_id: 10, asset_id: 'Katherina', urgency: 'Critical', quantity: 3, reason: 'nunc proin at turpis a pede posuere nonummy integer non', employee_id: 11, request_date: '2023-10-21', approval_date: '2023-10-22', request_status: 'Approved' },
+  # Add more entries here...
 ]
+
 
 Request.create(requests_data)
 
