@@ -103,7 +103,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_15_101558) do
   end
 
   create_table "requests", force: :cascade do |t|
-    t.integer "request_id"
     t.integer "asset_id"
     t.text "urgency"
     t.integer "quantity"

@@ -1,4 +1,6 @@
 class RepairsController < ApplicationController
+
+  skip_before_action :verify_authenticity_token
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
   rescue_from ActiveRecord::RecordNotFound, with: :render_repair_not_found
 
@@ -33,7 +35,7 @@ class RepairsController < ApplicationController
   def repair_params
     # params.permit!
     # params.permit(:repair_id, :asset_id, :quantity, :checkin_date, :checkout_date, :department_name)
-    params.permit(:repair_id, :asset_id, :quantity, :checkin_date, :checkout_date, :department_name)
+    params.permit( :asset_id, :quantity, :checkin_date, :checkout_date, :department_name)
     
 
   end
