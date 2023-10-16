@@ -7,8 +7,10 @@ Rails.application.routes.draw do
   root 'render#index'
 
 
+  # Resources for assets_directories
+    resources :assets_directories, only: [:index, :show, :create, :update, :destroy]
 
-    # Resources for Employees
+  # Resources for Employees
     resources :employees
   
     # Resources for Assets
@@ -39,7 +41,12 @@ Rails.application.routes.draw do
     get 'manager/pending_requests' => 'requests#pending_requests'
     get 'manager/completed_requests' => 'requests#completed_requests'
   
-    # Other custom routes as needed
+# config/routes.rb
+Rails.application.routes.draw do
+  resources :requests, only: [:index, :show, :create, :update, :destroy]
+end
+
+
   
     # ...
   
