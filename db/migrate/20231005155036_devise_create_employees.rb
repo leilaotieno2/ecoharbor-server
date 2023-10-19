@@ -4,13 +4,9 @@ class DeviseCreateEmployees < ActiveRecord::Migration[7.0]
   def change
     create_table :employees do |t|
       ## Database authenticatable
-      t.string :first_name,          null: false, default: ""
-      t.string :last_name,           null: false, default: ""
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
-      t.bigint :phone_number,       null: false, default: ""
-      t.date :employment_date,      null: false
-      t.integer :department_id
+
 
       ## Recoverable
       t.string   :reset_password_token
@@ -37,7 +33,7 @@ class DeviseCreateEmployees < ActiveRecord::Migration[7.0]
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
-
+      t.integer :role, default: 0
       t.timestamps null: false
     end
 

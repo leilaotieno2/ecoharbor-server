@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: ecoharbor_server_development
+  database: ecoharbor_server_development2
   username: baraka
   password: baraka
   host: localhost
@@ -60,7 +60,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: ecoharbor_server_test
+  database: ecoharbor_server_test2
   username: baraka
   password: baraka
   host: localhost
